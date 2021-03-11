@@ -54,16 +54,16 @@ class ControllerExtensionPaymentBest2Pay extends Controller {
             $data['error_password'] = '';
         }
 
-        if (isset($this->request->post['best2pay_status'])) {
-            $data['best2pay_status'] = $this->request->post['best2pay_status'];
+        if (isset($this->request->post['payment_best2pay_status'])) {
+            $data['payment_best2pay_status'] = $this->request->post['payment_best2pay_status'];
         } else {
-            $data['best2pay_status'] = $this->config->get('best2pay_status');
+            $data['payment_best2pay_status'] = $this->config->get('payment_best2pay_status');
         }
 
-        if (isset($this->request->post['best2pay_sort_order'])) {
-            $data['best2pay_sort_order'] = $this->request->post['best2pay_sort_order'];
+        if (isset($this->request->post['payment_best2pay_sort_order'])) {
+            $data['payment_best2pay_sort_order'] = $this->request->post['payment_best2pay_sort_order'];
         } else {
-            $data['best2pay_sort_order'] = $this->config->get('best2pay_sort_order');
+            $data['payment_best2pay_sort_order'] = $this->config->get('payment_best2pay_sort_order');
         }
 
         $data['breadcrumbs'] = array();
@@ -90,36 +90,36 @@ class ControllerExtensionPaymentBest2Pay extends Controller {
 
         $data['cancel'] = $this->url->link('extension/extension', 'token=' . $this->session->data['token'] . '&type=payment', 'SSL');
 
-        if (isset($this->request->post['best2pay_sector'])) {
-            $data['best2pay_sector'] = $this->request->post['best2pay_sector'];
+        if (isset($this->request->post['payment_best2pay_sector'])) {
+            $data['payment_best2pay_sector'] = $this->request->post['payment_best2pay_sector'];
         } else {
-            $data['best2pay_sector'] = $this->config->get('best2pay_sector');
+            $data['payment_best2pay_sector'] = $this->config->get('payment_best2pay_sector');
         }
 
-        if (isset($this->request->post['best2pay_kkt'])) {
-            $data['best2pay_kkt'] = $this->request->post['best2pay_kkt'];
+        if (isset($this->request->post['payment_best2pay_kkt'])) {
+            $data['payment_best2pay_kkt'] = $this->request->post['payment_best2pay_kkt'];
         } else {
-            $data['best2pay_kkt'] = $this->config->get('best2pay_kkt');
+            $data['payment_best2pay_kkt'] = $this->config->get('payment_best2pay_kkt');
         }
 
-        if (isset($this->request->post['best2pay_tax'])) {
-            $data['best2pay_tax'] = $this->request->post['best2pay_tax'];
+        if (isset($this->request->post['payment_best2pay_tax'])) {
+            $data['payment_best2pay_tax'] = $this->request->post['payment_best2pay_tax'];
         } else {
-            $data['best2pay_tax'] = $this->config->get('best2pay_tax');
+            $data['payment_best2pay_tax'] = $this->config->get('payment_best2pay_tax');
         }
 
-        if (isset($this->request->post['best2pay_password'])) {
-            $data['best2pay_password'] = $this->request->post['best2pay_password'];
+        if (isset($this->request->post['payment_best2pay_password'])) {
+            $data['payment_best2pay_password'] = $this->request->post['payment_best2pay_password'];
         } else {
-            $data['best2pay_password'] = $this->config->get('best2pay_password');
+            $data['payment_best2pay_password'] = $this->config->get('payment_best2pay_password');
         }
 
         $data['callback'] = HTTP_CATALOG . 'index.php?route=payment/best2pay/callback';
 
-        if (isset($this->request->post['best2pay_test'])) {
-            $data['best2pay_test'] = $this->request->post['best2pay_test'];
+        if (isset($this->request->post['payment_best2pay_test'])) {
+            $data['payment_best2pay_test'] = $this->request->post['payment_best2pay_test'];
         } else {
-            $data['best2pay_test'] = $this->config->get('best2pay_test');
+            $data['payment_best2pay_test'] = $this->config->get('payment_best2pay_test');
         }
 
         $this->template = 'extension/payment/best2pay.tpl';
@@ -136,11 +136,11 @@ class ControllerExtensionPaymentBest2Pay extends Controller {
             $this->error['warning'] = $this->language->get('error_permission');
         }
 
-        if (!$this->request->post['best2pay_sector']) {
+        if (!$this->request->post['payment_best2pay_sector']) {
             $this->error['warning'] = $this->language->get('error_sector');
         }
 
-        if (!$this->request->post['best2pay_password']) {
+        if (!$this->request->post['payment_best2pay_password']) {
             $this->error['warning'] = $this->language->get('error_password');
         }
 
